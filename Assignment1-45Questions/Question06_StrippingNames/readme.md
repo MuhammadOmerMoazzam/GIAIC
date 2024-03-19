@@ -1,0 +1,1 @@
+# Question06_StrippingNames
