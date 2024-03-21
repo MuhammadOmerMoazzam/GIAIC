@@ -1,6 +1,6 @@
 {
-  "name": "omer_calculator",
-  "version": "1.0.0",
+  "name": "simple-calculator",
+  "version": "2.0.0",
   "description": "A simple calculator with TypeScript, Node.js and Inquirer",
   "main": "index.js",
   "type": "module",
@@ -8,7 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "muhammad_omer_moazzam",
   "license": "MIT",
   "dependencies": {
     "inquirer": "^9.2.16"
