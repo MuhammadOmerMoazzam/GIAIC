@@ -1,0 +1,15 @@
+{
+  "name": "project01_number_guessing-game",
+  "version": "1.0.0",
+  "description": "A command line number guessing game made with TypeScript, Node.js and Inquirer",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "muhammad_omer_moazzam",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^9.2.16"
+  }
+}
