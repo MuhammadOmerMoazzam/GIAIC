@@ -18,6 +18,6 @@ if (answer.userGuessedNumber === randomNumber) {
   console.log(`Congratulations! you guessed the right number.`);
 } else {
   console.log(
-    `Sorry! you guessed wrong number. The number was ${randomNumber}. Lets try again.`
+    `Sorry! you guessed wrong number. The correct number was ${randomNumber}. Lets try again.`
   );
 }
