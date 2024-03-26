@@ -1,0 +1,19 @@
+{
+  "name": "atm_omermoazzam",
+  "version": "1.0.0",
+  "description": "CLI based Automated Teller Machine (ATM) made by using TypeScript, Node.js and Inquirer ",
+  "main": "index.js",
+  "type": "module",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "muhammad_omer_moazzam",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^9.2.16"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7"
+  }
+}
