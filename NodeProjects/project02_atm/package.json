@@ -1,6 +1,6 @@
 {
   "name": "atm_omermoazzam",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CLI based Automated Teller Machine (ATM) made by using TypeScript, Node.js and Inquirer ",
   "main": "index.js",
   "type": "module",
