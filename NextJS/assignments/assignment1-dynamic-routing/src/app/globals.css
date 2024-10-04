@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #ffffff;
+  --background: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font: 4em bold;
+  background: -webkit-linear-gradient(#d6e107, #cd6b08);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin: .5em 0; 
+}
+
+h2 {
+  font-size: 3em;
+  margin: 1em 0 .1em;
+  font-weight: bold;
+  color: blue;
+  text-shadow: 2px 2px 5px blue;
+}
+
+p {
+  font-size: 2em;
+  margin: 0 .5em;
+}
+
+div ul {
+  margin: .5em 1em;
+}
+
+div ul li {
+  color: blue;
+  font-size: 1.5em;
+}
+
+.go-back {
+  color: orange;
+  border: 1px solid orange;
+  border-radius: 5px;
+  padding: .5em 1em;
+  margin: 1em 0;
+}
+
+.topic-link {
+  font-size: 1.5em;
+  color: orange;
+  margin: 0 .7em;
+}
+
+.not-found {
+  margin: auto;
+  padding: 5em;
+  color: red;
+  background-color: #fff;
+  width: fit-content;
+  border-radius: 20px;
+  text-align: center;
+}
+
+nav {
+  background-color: #fff;
+  font-size: 2em;
+  color: orange;
+  /* padding:  0 .5em; */
+  margin-bottom: 1em;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  color: #fff;
+  background-color: orange;
+  padding: .1em .5em;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
