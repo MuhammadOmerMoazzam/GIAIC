@@ -1,6 +1,4 @@
-import { count } from "console";
 import Link from "next/link";
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode } from "react";
 
 export default function DynamicCountry({params}:{params:{country_name: string}}) {
 
@@ -29,7 +27,7 @@ export default function DynamicCountry({params}:{params:{country_name: string}})
 
     if (Object.keys(countries).includes(params.country_name) ) {
 
-        let country = params.country_name as keyof typeof countries;
+        const country = params.country_name as keyof typeof countries;
 
         return (
             <div style={{margin: 30, padding: 10}}>
