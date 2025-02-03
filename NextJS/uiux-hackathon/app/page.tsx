@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useState } from "react";
 import localFont from "next/font/local";
+import Navbar from "@/components/Navbar";
 
 // const greatVibes = Great_Vibes({
 //   weight: ["400"],
@@ -47,6 +48,7 @@ export default function Home() {
   ];
   return (
     <div className="bg-[#0D0D0DF2] pt-[150px] lg:pt-0">
+      < Navbar/>
       <div className="sec1 max-w-[1320px] relative lg:h-[600px] mx-auto px-[20px] sm:px-[60px] flex justify-between items-center md:flex-row flex-col">
         <div className="hidden lg:absolute lg:top-[30px] lg:left-[-50px] lg:flex lg:flex-col lg:items-center lg:gap-[30px]">
           <div className="w-[1px] h-[150px] bg-[#FFF]"></div>
