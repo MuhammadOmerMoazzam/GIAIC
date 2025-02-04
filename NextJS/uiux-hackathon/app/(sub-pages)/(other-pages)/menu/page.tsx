@@ -179,17 +179,17 @@ export default function Menu() {
                 {starters.map((starter, index) => (
                   <div key={index} className="relative  ">
                     <div className="flex justify-between items-start mb:1 md:mb-2">
-                      <h3 className="text-[#333333] text-base sm:text-lg md:text-xl lg:text-2xl font-bold pr-2 flex-grow">
+                      <h3 className="text-[#333333] text-lg sm:text-lg md:text-lg lg:text-xl xl:text-2xl font-bold pr-2 flex-grow">
                         {starter.name}
                       </h3>
-                      <span className="text-[#ff9f0d] text-base sm:text-lg md:text-xl lg:text-2xl font-bold whitespace-nowrap">
+                      <span className="text-[#ff9f0d] text-lg sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-bold whitespace-nowrap">
                         {starter.price}$
                       </span>
                     </div>
-                    <p className="text-[#4F4F4F] text-xs sm:text-sm md:text-base lg:text-lg mb-1">
+                    <p className="text-[#4F4F4F] text-sm sm:text-sm md:text-base lg:text-lg mb-1">
                       {starter.description}
                     </p>
-                    <p className="text-[#828282] text-xs sm:text-sm md:text-base">{starter.calories} CAL</p>
+                    <p className="text-[#828282] text-sm sm:text-sm md:text-base">{starter.calories} CAL</p>
                     {index !== desserts.length - 1 && (
                       <div className="absolute bottom-0 left-0 right-0 border-b border-dotted border-gray-300" />
                     )}
@@ -217,17 +217,17 @@ export default function Menu() {
               {mainCourse.map((meal, index) => (
                 <div key={index} className="relative">
                   <div className="flex justify-between items-start mb-1 md:mb-2">
-                    <h3 className="text-[#333333] text-base sm:text-lg md:text-xl lg:text-2xl font-bold pr-2 flex-grow">
+                    <h3 className="text-[#333333] text-lg sm:text-lg md:text-lg lg:text-xl xl:text-2xl font-bold pr-2 flex-grow">
                       {meal.name}
                     </h3>
-                    <span className="text-[#ff9f0d] text-base sm:text-lg md:text-xl lg:text-2xl font-bold whitespace-nowrap">
+                    <span className="text-[#ff9f0d] text-lg sm:text-lg md:text-lg lg:text-xl xl:text-2xl font-bold whitespace-nowrap">
                       {meal.price}$
                     </span>
                   </div>
-                  <p className="text-[#4F4F4F] text-xs sm:text-sm md:text-base lg:text-lg mb-1">
+                  <p className="text-[#4F4F4F] text-sm sm:text-sm md:text-base lg:text-lg mb-1">
                     {meal.description}
                   </p>
-                  <p className="text-[#828282] text-xs sm:text-sm md:text-base">{meal.calories} CAL</p>
+                  <p className="text-[#828282] text-sm sm:text-sm md:text-base">{meal.calories} CAL</p>
                   {index !== desserts.length - 1 && (
                     <div className="absolute bottom-0 left-0 right-0 border-b border-dotted border-gray-300" />
                   )}
@@ -284,17 +284,17 @@ export default function Menu() {
                 {desserts.map((dessert, index) => (
                   <div key={index} className="relative  ">
                     <div className="flex justify-between items-start mb:1 md:mb-2">
-                      <h3 className="text-[#333333] text-base sm:text-lg md:text-xl lg:text-2xl font-bold pr-2 flex-grow">
+                      <h3 className="text-[#333333] text-lg sm:text-lg md:text-lg lg:text-xl xl:text-2xl font-bold pr-2 flex-grow">
                         {dessert.name}
                       </h3>
-                      <span className="text-[#ff9f0d] text-base sm:text-lg md:text-xl lg:text-2xl font-bold whitespace-nowrap">
+                      <span className="text-[#ff9f0d] text-lg sm:text-lg md:text-lg lg:text-xl xl:text-2xl font-bold whitespace-nowrap">
                         {dessert.price}$
                       </span>
                     </div>
-                    <p className="text-[#4F4F4F] text-xs sm:text-sm md:text-base lg:text-lg mb-1">
+                    <p className="text-[#4F4F4F] text-sm sm:text-sm md:text-base lg:text-lg mb-1">
                       {dessert.description}
                     </p>
-                    <p className="text-[#828282] text-xs sm:text-sm md:text-base">{dessert.calories} CAL</p>
+                    <p className="text-[#828282] text-sm sm:text-sm md:text-base">{dessert.calories} CAL</p>
                     {index !== desserts.length - 1 && (
                       <div className="absolute bottom-0 left-0 right-0 border-b border-dotted border-gray-300" />
                     )}
@@ -322,17 +322,17 @@ export default function Menu() {
               {drinks.map((drink, index) => (
                 <div key={index} className="relative">
                   <div className="flex justify-between items-start mb-1 md:mb-2">
-                    <h3 className="text-[#333333] text-base sm:text-lg md:text-xl lg:text-2xl font-bold pr-2 flex-grow">
+                    <h3 className="text-[#333333] text-lg sm:text-lg md:text-lg lg:text-xl xl:text-2xl font-bold pr-2 flex-grow">
                       {drink.name}
                     </h3>
-                    <span className="text-[#ff9f0d] text-base sm:text-lg md:text-xl lg:text-2xl font-bold whitespace-nowrap">
+                    <span className="text-[#ff9f0d] text-lg sm:text-lg md:text-lg lg:text-xl xl:text-2xl font-bold whitespace-nowrap">
                       {drink.price}$
                     </span>
                   </div>
-                  <p className="text-[#4F4F4F] text-xs sm:text-sm md:text-base lg:text-lg mb-1">
+                  <p className="text-[#4F4F4F] text-sm sm:text-sm md:text-base lg:text-lg mb-1">
                     {drink.description}
                   </p>
-                  <p className="text-[#828282] text-xs sm:text-sm md:text-base">{drink.calories} CAL</p>
+                  <p className="text-[#828282] text-sm sm:text-sm md:text-base">{drink.calories} CAL</p>
                   {index !== desserts.length - 1 && (
                     <div className="absolute bottom-0 left-0 right-0 border-b border-dotted border-gray-300" />
                   )}
