@@ -6,7 +6,7 @@ import Image from "next/image"
 import { notFound } from "next/navigation"
 import { Star, Heart, ArrowLeftRight, ChevronLeft, ChevronRight, Minus, Plus, Share2, Repeat2, ShoppingBag } from "lucide-react"
 import { Button, Badge, Input, Tabs, Carousel } from "@material-tailwind/react";
-import { Root, List, Trigger, Content } from '@radix-ui/react-tabs'
+import { Root, List, Trigger, Content } from "@radix-ui/react-tabs"
 import useEmblaCarousel from "embla-carousel-react"
 import React from "react";
 
