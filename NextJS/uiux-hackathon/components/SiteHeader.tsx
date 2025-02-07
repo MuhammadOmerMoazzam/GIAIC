@@ -17,35 +17,35 @@ export function SiteHeader(
   {title, subTitle}:{title:string; subTitle:string}
 ) {
   return (
-    <header className="relative overflow-x-hidden">
+    <header className="relative overflow-x-hidden my-1">
       {/* Navigation */}
-      <nav className="bg-black">
+      <nav className="bg-[#0D0D0D]">
         <div className="w-screen max-w-full px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link href="/" className="text-white text-2xl font-bold">
-              Food<span className="text-[#ff9f0d]">tuck</span>
+            <Link href="/" className="text-white text-2xl font-bold lg:mx-14">
+              Food<span className="text-[#ff9f0d] ">tuck</span>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-8 ">
               {navigation.map((item) => (
-                <Link key={item.name} href={item.href} className="text-white hover:text-[#ff9f0d] transition-colors">
+                <Link key={item.name} href={item.href} className="text-white hover:text-[#ff9f0d] transition-colors lg:mx-2">
                   {item.name}
                 </Link>
               ))}
             </div>
 
             {/* Icons */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6 lg:mx-14">
               <button className="text-white hover:text-[#ff9f0d] transition-colors">
                 <Search className="h-5 w-5" />
               </button>
               <button className="text-white hover:text-[#ff9f0d] transition-colors">
-                <User className="h-5 w-5" />
+              <Link href="/" ><User className="h-5 w-5" /></Link>
               </button>
               <button className="text-white hover:text-[#ff9f0d] transition-colors">
-                <Link href="/shopping-cart"><ShoppingBag className="h-5 w-5" /></Link>
+                <Link href="/cart"><ShoppingBag className="h-5 w-5" /></Link>
               </button>
             </div>
           </div>
