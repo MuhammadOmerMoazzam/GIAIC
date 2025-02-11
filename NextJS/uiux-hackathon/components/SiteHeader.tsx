@@ -20,7 +20,7 @@ export function SiteHeader(
     <header className="relative overflow-x-hidden my-1">
       {/* Navigation */}
       <nav className="bg-[#0D0D0D]">
-        <div className="w-screen max-w-full px-4">
+        <div className=" max-w-[1320px] px-4 mx-auto">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="text-white text-2xl font-bold lg:mx-14">

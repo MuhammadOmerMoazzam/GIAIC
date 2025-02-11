@@ -210,9 +210,9 @@ export default function Shop() {
     <div className="bg-white">
       <SiteHeader title="Our Shop" subTitle="Shop" />
 
-      <div className="bg-inherit min-h-screen py-8 lg:px-16">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-8 sm:gap-4">
+      <div className="bg-inherit min-h-fit py-8">
+        <div className="container mx-auto px-4 lg:px-16">
+          <div className="flex flex-col lg:flex-row gap-4 sm:gap-4">
             {/* Main Content */}
             <div className="flex-1">
               {/* Filters */}

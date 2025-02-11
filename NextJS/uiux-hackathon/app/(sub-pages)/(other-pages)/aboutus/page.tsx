@@ -1,16 +1,129 @@
+"use client"
+
 import { SiteHeader } from "@/components/SiteHeader";
 import Image from "next/image"
-import { Play } from "lucide-react"
+import { Facebook, Play, Twitter, Youtube } from "lucide-react"
 import Link from "next/link";
-// import { Button } from "@material-tailwind/react";
+import { useState } from "react"
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+interface TeamMember {
+  name: string
+  role: string
+  imageUrl: string
+  socialLinks?: boolean
+}
+
+const teamMembers: TeamMember[] = [
+  {
+    name: "Mark Henry",
+    socialLinks: true,
+    role: "Owner",
+    imageUrl: "/team-member.png"
+  },
+  {
+    name: "Lucky Helen",
+    role: "Chef",
+    imageUrl: "/team-member.png",
+    socialLinks: true,
+  },
+  {
+    name: "Moon Henry",
+    role: "Founder",
+    imageUrl: "/team-member.png",
+    socialLinks: true,
+  },
+  {
+    name: "Tom Monrow",
+    role: "Specialist",
+    socialLinks: true,
+    imageUrl: "/team-member.png",
+  },
+]
+
+interface MenuItem {
+  name: string
+  description: string
+  calories: number
+  price: number
+}
+
+interface MenuCategory {
+  name: string
+  items: MenuItem[]
+}
+
+const menuCategories: MenuCategory[] = [
+  {
+    name: "Breakfast",
+    items: Array(4).fill({
+      name: "Alder Grilled Chinook Salmon",
+      description: "Toasted French bread topped with romano, cheddar",
+      calories: 560,
+      price: 32,
+    }),
+  },
+  {
+    name: "Lunch",
+    items: Array(4).fill({
+      name: "Alder Grilled Chinook Salmon",
+      description: "Toasted French bread topped with romano, cheddar",
+      calories: 560,
+      price: 32,
+    }),
+  },
+  {
+    name: "Dinner",
+    items: Array(4).fill({
+      name: "Alder Grilled Chinook Salmon",
+      description: "Toasted French bread topped with romano, cheddar",
+      calories: 560,
+      price: 32,
+    }),
+  },
+  {
+    name: "Dessert",
+    items: Array(4).fill({
+      name: "Alder Grilled Chinook Salmon",
+      description: "Toasted French bread topped with romano, cheddar",
+      calories: 560,
+      price: 32,
+    }),
+  },
+  {
+    name: "Drink",
+    items: Array(4).fill({
+      name: "Alder Grilled Chinook Salmon",
+      description: "Toasted French bread topped with romano, cheddar",
+      calories: 560,
+      price: 32,
+    }),
+  },
+  {
+    name: "Snack",
+    items: Array(4).fill({
+      name: "Alder Grilled Chinook Salmon",
+      description: "Toasted French bread topped with romano, cheddar",
+      calories: 560,
+      price: 32,
+    }),
+  },
+]
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
 
 export default function Aboutus() {
+  const [activeCategory, setActiveCategory] = useState("Breakfast")
+  
   return (
     <div>
       <SiteHeader title="About Us" subTitle="About" />
 
-      <section className="min-h-screen bg-white text-[#333333]">
-        <div className="container mx-auto px-4 py-12 md:py-24">
+      <section className="min-h-fit bg-white text-[#333333]">
+        <div className="container mx-auto px-4 pt-12 md:pt-24 pb-8 md:pb-12">
           <div className="grid gap-8 md:grid-cols-2">
 
             <div className="grid gap-4 lg:mx-12">
@@ -77,7 +190,7 @@ export default function Aboutus() {
         </div>
       </section>
 
-      <section className="bg-white text-[#333333] lg:py-16">
+      <section className="bg-white text-[#333333] lg:py-16 pb-8">
         <div className="container mx-auto lg:px-16 ">
           {/* Header */}
           <div className="text-center mb-12">
@@ -157,6 +270,137 @@ export default function Aboutus() {
           </div>
         </div>
       </section>
+
+      <section className="relative max-h-[686px] min-h-fit bg-white pb-8 lg:py-16">
+        {/* Orange background */}
+        <div className="absolute inset-0 h-1/2 bg-[#ff9f0d]">
+          <div
+            className="absolute inset-0 bg-cover bg-center mix-blend-soft-light opacity-90"
+            style={{
+              backgroundImage:
+                'url("team-member-bg.png")',
+            }}
+          />
+        </div>
+
+        <div className="absolute inset-0 top-1/2 bg-white">
+          <div className="absolute inset-0 opacity-10 bg-[url('/noise.png')] bg-repeat" />
+        </div>
+
+        <div className="container mx-auto px-4 relative lg:px-16">
+          {/* Header content */}
+          <div className="text-center pt-16 pb-12">
+            <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">Team Member</h2>
+            <p className="text-white/90 max-w-2xl mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p className="text-white/90 max-w-2xl mx-auto">Varius sed pharetra dictum neque massa congue</p>
+          </div>
+
+          {/* Team grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
+            {teamMembers.map((member, index) => (
+              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg">
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={member.imageUrl || "/placeholder.svg"}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  />
+                  {member.socialLinks && (
+                    <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/0 hover:bg-black/20 transition-colors group">
+                      <div className="flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button className="p-2 bg-white text-[#333333] rounded-sm hover:bg-[#ff9f0d]">
+                          <Facebook className="w-4 h-4" />
+                        </button>
+                        <button className="p-2 bg-white text-[#333333] rounded-sm hover:bg-[#ff9f0d]">
+                          <Twitter className="w-4 h-4" />
+                        </button>
+                        <button className="p-2 bg-white text-[#333333] rounded-sm hover:bg-[#ff9f0d]">
+                          <Youtube className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="p-4 text-center">
+                  <h3 className="font-semibold text-lg text-[#4F4F4F]">{member.name}</h3>
+                  <p className="text-[#828282]">{member.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </section>
+
+      <section className="bg-black py-16 px-4">
+      <div className="container mx-auto max-w-6xl">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-300 mb-4 relative inline-block">
+            Our Food Menu
+            <div className="absolute -right-8 -top-4">
+              <Image
+                src=".png"
+                alt=""
+                width={40}
+                height={60}
+                className="opacity-80"
+              />
+            </div>
+          </h2>
+          <p className="text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p className="text-gray-400">Varius sed pharetra dictum neque massa congue</p>
+        </div>
+
+        {/* Category Navigation */}
+        <nav className="mb-12">
+          <ul className="flex flex-wrap justify-center gap-8">
+            {menuCategories.map((category) => (
+              <li key={category.name}>
+                <button
+                  onClick={() => setActiveCategory(category.name)}
+                  className={cn(
+                    "text-lg transition-colors",
+                    activeCategory === category.name ? "text-[#ff9f0d]" : "text-gray-400 hover:text-gray-300",
+                  )}
+                >
+                  {category.name}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {/* Menu Items Grid */}
+        <div className="grid md:grid-cols-2 gap-x-16 gap-y-8">
+          {menuCategories
+            .find((category) => category.name === activeCategory)
+            ?.items.map((item, index) => (
+              <div key={index} className="relative pb-8">
+                <div className="flex justify-between items-start gap-4">
+                  <div>
+                    <h3 className="text-xl text-gray-300 mb-2">{item.name}</h3>
+                    <p className="text-gray-400 text-sm mb-1">{item.description}</p>
+                    <p className="text-gray-500 text-sm">{item.calories} CAL</p>
+                  </div>
+                  <span className="text-[#ff9f0d] text-xl">{item.price}$</span>
+                </div>
+                <div className="absolute bottom-4 left-0 right-0 border-b border-dotted border-gray-700" />
+              </div>
+            ))}
+        </div>
+
+        {/* View Menu Button */}
+        <div className="text-center mt-12">
+          <button className="border border-[#ff9f0d] text-[#ff9f0d] px-8 py-3 hover:bg-[#ff9f0d] hover:text-white transition-colors">
+            View menu
+          </button>
+        </div>
+      </div>
+    </section>
+
     </div>
   );
 }
