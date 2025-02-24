@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 
-st.logo(image=os.path.abspath("images/logo.svg"))
+# st.logo(image=os.path.abspath("images/logo.svg"))
 
 def home():
   st.balloons()
