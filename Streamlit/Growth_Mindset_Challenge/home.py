@@ -1,9 +1,9 @@
 import streamlit as st
-import time
+import os
 
 st.logo(
-    image="images/logo.svg",
-    icon_image="images/logo.svg",
+    image=os.path.join(os.getcwd(), "images", "logo.svg"),
+    icon_image=os.path.join(os.getcwd(), "images", "logo.svg"),
   )
 
 def home():
