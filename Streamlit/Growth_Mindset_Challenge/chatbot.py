@@ -46,7 +46,7 @@ if promt:
         stream=True
       )
     except Exception as e: 
-      st.error(e.message) 
+      st.error(e) 
     else:
       response = st.write_stream(stream)
       st.session_state.messages.append({"role": "assistant", "content": response})
