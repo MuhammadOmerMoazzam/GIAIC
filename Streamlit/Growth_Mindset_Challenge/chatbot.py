@@ -1,6 +1,9 @@
 import streamlit as st
 from openai import OpenAI
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 
 st.title("🤖 Chatbot")
 if "toast_shown" not in st.session_state:
@@ -41,7 +44,7 @@ if promt:
           for msg in st.session_state.messages
         ],
         stream=True
-    )
+      )
     except Exception as e: 
       st.error(e.message) 
     else:
