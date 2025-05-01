@@ -59,7 +59,6 @@ const product = {
   rating: 5.0,
   reviews: 22,
   images: [
-
     "/placeholder.svg?height=400&width=400",
     "/placeholder.svg?height=400&width=400",
     "/placeholder.svg?height=400&width=400",
