@@ -5,8 +5,7 @@ import Image from "next/image"
 import { Facebook, Play, Twitter, Youtube } from "lucide-react"
 import Link from "next/link";
 import { useState } from "react"
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { cn } from "@/lib/utils";
 
 interface TeamMember {
   name: string
@@ -110,10 +109,6 @@ const menuCategories: MenuCategory[] = [
     }),
   },
 ]
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
 
 export default function Aboutus() {
   const [activeCategory, setActiveCategory] = useState("Breakfast")
@@ -340,15 +335,6 @@ export default function Aboutus() {
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-[#4F4F4F] mb-4 relative inline-block">
             Our Food Menu
-            <div className="absolute -right-8 -top-4">
-              <Image
-                src=""
-                alt=""
-                width={40}
-                height={60}
-                className="opacity-80"
-              />
-            </div>
           </h2>
           <p className="text-[#4F4F4F]">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <p className="text-[#4F4F4F]">Varius sed pharetra dictum neque massa congue</p>
