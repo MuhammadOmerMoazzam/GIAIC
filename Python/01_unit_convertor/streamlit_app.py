@@ -89,35 +89,63 @@ def get_siunit(main_quantity):
   
 siunit = get_siunit(main_quantity)
 
+# if "calculated_value2" not in st.session_state:
+#   st.session_state.calculated_value2 = 0
+
+# if "calculated_value1" not in st.session_state:
+#   st.session_state.calculated_value1 = 0
+def set_calculated_values():
+  global calculated_value1, calculated_value2
+  calculated_value1 = calculated_value2 = 0
+
+set_calculated_values()
 
 col1, col2 = st.columns(2)
 with col1:
   unit1 = st.selectbox(
-    label="", 
+    label=".", 
     options=unit_options, 
     key="unit1", 
     index=unit_options.index(siunit), 
     label_visibility="hidden")
-  value1 = st.number_input(
-    label="", 
-    value=0, 
-    step=1, 
+  value1 = st.text_input(
+    label=".", 
+    value=eval(str(calculated_value1)), 
     key="value1", 
     label_visibility="hidden")
 
 with col2:
   unit2 = st.selectbox(
-    label="", 
+    label=".", 
     options=unit_options, 
     key="unit2", 
     index=unit_options.index(siunit),
     label_visibility="hidden")
-  value2 = st.number_input(
-    label="", 
-    value=0, 
-    step=1,
+  value2 = st.text_input(
+    label=".", 
+    value=eval(str(calculated_value2)), 
     key="value2", 
     label_visibility="hidden")
 
-     
+print("------------",calculated_value2)
 
+# formula and conversion
+match main_quantity:
+  case "Length":
+    match unit1:
+      case "Meter":
+        match unit2:
+          case "Centimeter":
+            calculated_value2 = (value1 * 100)
+            print("centimeter ", calculated_value2 )
+          case "Kilometer":
+            calculated_value2 = float(value1 / 1000)
+            print("kilometer ", calculated_value2 )
+
+  case "Area":
+    match unit1:
+      case "Square meter":
+        match unit2:
+          case "Square kilometer":
+            print("test case2 area and break ")         
+    
