@@ -278,7 +278,7 @@ export default function Aboutus() {
             className="absolute inset-0 bg-cover bg-center mix-blend-soft-light opacity-90"
             style={{
               backgroundImage:
-                'url("team-member-bg.png")',
+                'url("/team-member-bg.png")',
             }}
           />
         </div>
@@ -334,15 +334,15 @@ export default function Aboutus() {
 
       </section>
 
-      <section className="bg-black py-16 px-4">
+      <section className="bg-white py-16 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-300 mb-4 relative inline-block">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#4F4F4F] mb-4 relative inline-block">
             Our Food Menu
             <div className="absolute -right-8 -top-4">
               <Image
-                src=".png"
+                src=""
                 alt=""
                 width={40}
                 height={60}
@@ -350,8 +350,8 @@ export default function Aboutus() {
               />
             </div>
           </h2>
-          <p className="text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <p className="text-gray-400">Varius sed pharetra dictum neque massa congue</p>
+          <p className="text-[#4F4F4F]">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p className="text-[#4F4F4F]">Varius sed pharetra dictum neque massa congue</p>
         </div>
 
         {/* Category Navigation */}
@@ -363,7 +363,7 @@ export default function Aboutus() {
                   onClick={() => setActiveCategory(category.name)}
                   className={cn(
                     "text-lg transition-colors",
-                    activeCategory === category.name ? "text-[#ff9f0d]" : "text-gray-400 hover:text-gray-300",
+                    activeCategory === category.name ? "text-[#ff9f0d]" : "text-[#4F4F4F] hover:text-[#ff9f0d]",
                   )}
                 >
                   {category.name}
@@ -381,22 +381,22 @@ export default function Aboutus() {
               <div key={index} className="relative pb-8">
                 <div className="flex justify-between items-start gap-4">
                   <div>
-                    <h3 className="text-xl text-gray-300 mb-2">{item.name}</h3>
-                    <p className="text-gray-400 text-sm mb-1">{item.description}</p>
-                    <p className="text-gray-500 text-sm">{item.calories} CAL</p>
+                    <h3 className="text-xl text-[#4F4F4F] font-bold mb-2">{item.name}</h3>
+                    <p className="text-[#4F4F4F] text-sm mb-1">{item.description}</p>
+                    <p className="text-[#4F4F4F] text-sm">{item.calories} CAL</p>
                   </div>
-                  <span className="text-[#ff9f0d] text-xl">{item.price}$</span>
+                  <span className="text-[#ff9f0d] font-bold text-xl">{item.price}$</span>
                 </div>
-                <div className="absolute bottom-4 left-0 right-0 border-b border-dotted border-gray-700" />
+                <div className="absolute bottom-4 left-0 right-0 border-b border-dotted border-[#4F4F4F]" />
               </div>
             ))}
         </div>
 
         {/* View Menu Button */}
         <div className="text-center mt-12">
-          <button className="border border-[#ff9f0d] text-[#ff9f0d] px-8 py-3 hover:bg-[#ff9f0d] hover:text-white transition-colors">
+          <Link href="/menu" className="border border-[#ff9f0d] text-[#ff9f0d] px-8 py-3 hover:bg-[#ff9f0d] hover:text-white transition-colors">
             View menu
-          </button>
+          </Link>
         </div>
       </div>
     </section>
