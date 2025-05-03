@@ -1,9 +1,23 @@
 import streamlit as st
-import re
+import re, secrets, string
 
 st.title('Password Strength Meter')
 
+common_passwords = [
+    "123456", "123456789", "qwerty", "password", "12345678", "111111", "123123",
+    "12345", "1234567890", "1234567", "qwerty123", "1q2w3e4r", "admin", "qwertyuiop",
+    "password1", "123321", "000000", "iloveyou", "1234", "abcd1234", "letmein",
+    "welcome", "monkey", "dragon", "football", "sunshine", "princess", "baseball",
+    "shadow", "superman", "hello", "freedom", "whatever", "trustno1", "password123"
+]
+
 def check_password_strength(password):
+  if password:
+    # blacklist passwords
+    if password.lower() in common_passwords:
+      st.error("Avoid Blacklist Common Passwords❗")
+      return
+  
     score = 0
     
     # Length Check
@@ -38,6 +52,25 @@ def check_password_strength(password):
     else:
         st.error("❌ Weak Password - Improve it using the suggestions above.")
 
-# Get user input
-password = st.text_input("Enter your password: ")
-check_password_strength(password)
+def generate_password(length=12):
+  characters = string.ascii_letters + string.digits + string.punctuation
+  return ''.join(secrets.choice(characters) for _ in range(length))
+
+
+def main():
+  # Get user input
+  password = st.text_input("Enter your password: ")
+  check_password_strength(password)
+  
+  st.subheader("Genearte a Password")
+  col1, col2 = st.columns(2)
+  with col1:
+    generate = st.button("Generate")
+      
+  with col2:
+    if generate:
+      new_password = generate_password()
+      st.code(new_password)
+  
+if __name__ == "__main__":
+  main()
